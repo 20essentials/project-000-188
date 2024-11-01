@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: start;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+  animation: changeColor 0.5s linear infinite alternate both;
+  
+
+  .square {
+    width: 1vw;
+    height: 1vw;
+    border: 1px solid #0004;
+    flex-grow: 1;
+
+    @media (width <= 1111px) {
+      width: 3vw;
+      height: 3vw;
+    }
+
+    &:nth-child(9n + 0) {
+      background-color: var(--n1);
+    }
+    &:nth-child(9n + 1) {
+      background-color: var(--n2);
+    }
+    &:nth-child(9n + 2) {
+      background-color: var(--n3);
+    }
+    &:nth-child(9n + 3) {
+      background-color: var(--n4);
+    }
+    &:nth-child(9n + 4) {
+      background-color: var(--n5);
+    }
+    &:nth-child(9n + 5) {
+      background-color: var(--n6);
+    }
+    &:nth-child(9n + 6) {
+      background-color: var(--n7);
+    }
+    &:nth-child(9n + 7) {
+      background-color: var(--n8);
+    }
+    &:nth-child(9n + 8) {
+      background-color: var(--n9);
+    }
+    &:nth-child(9n + 9) {
+      background-color: var(--n10);
+    }
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    --n1: #bf0fff;
+    --n3: #ff1b6b;
+    --n5: #fff95b;
+    --n7: #eca0ff;
+    --n9: #8de9d5;
+  }
+  100% {
+    --n2: #60efff;
+    --n4: #b2ef91;
+    --n6: #30c67c;
+    --n8: #aefb2a;
+    --n10: #b6f3c9;
+  }
+}
